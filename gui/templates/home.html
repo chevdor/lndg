@@ -26,7 +26,7 @@
   </script>
     <h3>
       <span style="font-size: 12px;vertical-align: middle; padding-left: 18px; border:1px solid {{ node_info.color }}; background-color: {{ node_info.color }}" class="w3-circle" title="{{ node_info.color }}"></span>
-      <a style="margin-left:6px;" href="{{ graph_links }}/{{ network }}node/{{ node_info.identity_pubkey }}" target="_blank">{{ node_info.alias }}</a> | {{ node_info.identity_pubkey }}
+      <a style="margin-left:6px;" href="{{ graph_links }}/{{ network }}node/{{ node_info.identity_pubkey }}" target="_self">{{ node_info.alias }}</a> | {{ node_info.identity_pubkey }}
     </h3>
   <h6>
     <span id="lnd" class="w3-tag w3-round" title="{{ node_info.version }}">LND</span>
@@ -92,12 +92,12 @@
   <table class="w3-col w3-small w3-table-all w3-centered w3-hoverable" style="min-width:1000px;width:75%">
     <thead>
       <tr>
-        <th class="w3-border-bottom w3-border-right"><a href="/balances" target="_blank">Balance</a>: <span id="total_balance">0</span></th>
+        <th class="w3-border-bottom w3-border-right"><a href="/balances" target="_self">Balance</a>: <span id="total_balance">0</span></th>
         <th id="onChain" class="w3-border-bottom w3-border-right">Onchain: 0</th>
         <th id="confirmed" colspan="2" class="w3-border-bottom w3-border-right">Confirmed: 0</th>
         <th id="unconfirmed" class="w3-border-bottom w3-border-right">Unconfirmed: 0</th>
         <th id="limbo" class="w3-border-bottom w3-border-right" title="Amount in limbo from channel closing activities">Limbo: 0</th>
-        <th class="w3-border-bottom w3-border-right"><a href="/pending_htlcs" target="_blank">Pending HTLCs</a>: <span id="pending_htlcs">0</span></th>
+        <th class="w3-border-bottom w3-border-right"><a href="/pending_htlcs" target="_self">Pending HTLCs</a>: <span id="pending_htlcs">0</span></th>
         <th class="w3-border-bottom">
           <a style="cursor: pointer" onclick="Sync.POST('newaddress/', {body: {legacy:false}}, r => {showBannerMsg('Onchain Address:', r.data, true, r.data);qr_addr(r.data);})">New Onchain Address</a> | <a style="cursor: pointer" onclick="Sync.POST('newaddress/', {body: {legacy:true}}, r => {showBannerMsg('Legacy Address:', r.data, true, r.data);qr_addr(r.data);})">Legacy</a>
         </th>
@@ -137,22 +137,22 @@
 </div>
 <br/>
 <div class="w3-bar w3-border-top" style="background-color: transparent">
-  <a class="w3-bar-item w3-hover-blue" href="/income" target="_blank">P&L</a>
-  <a class="w3-bar-item w3-hover-blue" href="/closures" target="_blank">Closures</a>
-  <a class="w3-bar-item w3-hover-blue" href="/opens" target="_blank">New Peers</a>
-  <a class="w3-bar-item w3-hover-blue" href="/peerevents" target="_blank">Peer Events</a>
-  <a class="w3-bar-item w3-hover-blue" href="/actions" target="_blank">AR Actions</a>
-  <a class="w3-bar-item w3-hover-blue" href="/fees" target="_blank">Fee Rates</a>
-  <a class="w3-bar-item w3-hover-blue" href="/autopilot" target="_blank">Autopilot</a>
-  <a class="w3-bar-item w3-hover-blue" href="/autofees" target="_blank">Fee Log</a>
-  <a class="w3-bar-item w3-hover-blue" href="/channels" target="_blank">Channel Performance</a>
-  <a class="w3-bar-item w3-hover-blue" href="/keysends" target="_blank">Keysends</a>
-  <a class="w3-bar-item w3-hover-blue" href="/rebalancing" target="_blank">Rebalancing</a>
-  <a class="w3-bar-item w3-hover-blue" href="/towers" target="_blank">Towers</a>
-  <a class="w3-bar-item w3-hover-blue" href="/batch" target="_blank">Batching</a>
-  <a class="w3-bar-item w3-hover-blue" href="/trades" target="_blank">Trades</a>
-  <a class="w3-bar-item w3-hover-blue" href="/advanced" target="_blank">Advanced Settings</a>
-  <a class="w3-bar-item w3-hover-blue" href="/logs/?tail=20" target="_blank">Logs</a>
+  <a class="w3-bar-item w3-hover-blue" href="/income" target="_self">P&L</a>
+  <a class="w3-bar-item w3-hover-blue" href="/closures" target="_self">Closures</a>
+  <a class="w3-bar-item w3-hover-blue" href="/opens" target="_self">New Peers</a>
+  <a class="w3-bar-item w3-hover-blue" href="/peerevents" target="_self">Peer Events</a>
+  <a class="w3-bar-item w3-hover-blue" href="/actions" target="_self">AR Actions</a>
+  <a class="w3-bar-item w3-hover-blue" href="/fees" target="_self">Fee Rates</a>
+  <a class="w3-bar-item w3-hover-blue" href="/autopilot" target="_self">Autopilot</a>
+  <a class="w3-bar-item w3-hover-blue" href="/autofees" target="_self">Fee Log</a>
+  <a class="w3-bar-item w3-hover-blue" href="/channels" target="_self">Channel Performance</a>
+  <a class="w3-bar-item w3-hover-blue" href="/keysends" target="_self">Keysends</a>
+  <a class="w3-bar-item w3-hover-blue" href="/rebalancing" target="_self">Rebalancing</a>
+  <a class="w3-bar-item w3-hover-blue" href="/towers" target="_self">Towers</a>
+  <a class="w3-bar-item w3-hover-blue" href="/batch" target="_self">Batching</a>
+  <a class="w3-bar-item w3-hover-blue" href="/trades" target="_self">Trades</a>
+  <a class="w3-bar-item w3-hover-blue" href="/advanced" target="_self">Advanced Settings</a>
+  <a class="w3-bar-item w3-hover-blue" href="/logs/?tail=20" target="_self">Logs</a>
 </div>
 <div id="active_channels_container" style="display:none" class="w3-container w3-padding-small">
   <div class="w3-container w3-padding-small table" style="overflow:auto;max-height:1000px">
@@ -332,7 +332,7 @@
     </tfoot>
   </table>
 </div>
-{% include 'rebalances_table.html' with count=10 load_count=10 title='<a href="/rebalances" target="_blank">Rebalance Requests</a>' %}
+{% include 'rebalances_table.html' with count=10 load_count=10 title='<a href="/rebalances" target="_self">Rebalance Requests</a>' %}
 <div id="payments_container" style="display:none" class="w3-container w3-padding-small">
   <table id="paymentsTable" class="w3-table-all w3-centered w3-hoverable">
     <thead>
@@ -371,7 +371,7 @@
         <th>Channel In Alias</th>
         <th>Channel In</th>
         <th>Hash</th>
-        <th><a href="/keysends" target="_blank">Keysend</a></th>
+        <th><a href="/keysends" target="_self">Keysend</a></th>
       </tr>
     </thead>
     <tbody id="invoices"></tbody>
@@ -514,8 +514,8 @@
     "is_active": ch => ({innerHTML: ch.is_active, title: (ch.is_active ? 'Up' : 'Down') + 'time: ' + formatDate(ch.last_update).replace(" ago", ""), style: {backgroundColor: ch.is_active ? green : red} })
   })
   const pending_open_template = {
-    "alias": ch => ({innerHTML: `<a href="{{graph_links}}/{{network}}node/${ch.remote_node_pub}" target="_blank">${ch.alias == '' ? ch.remote_node_pub.substr(0,12) : ch.alias }</a>`, title: ch.remote_node_pub}),
-    "channel_point": ch => ({innerHTML: `<a href='{{ network_links }}/{{ network }}tx/${ch.funding_txid}' target="_blank">${ch.channel_point}</a>`}),
+    "alias": ch => ({innerHTML: `<a href="{{graph_links}}/{{network}}node/${ch.remote_node_pub}" target="_self">${ch.alias == '' ? ch.remote_node_pub.substr(0,12) : ch.alias }</a>`, title: ch.remote_node_pub}),
+    "channel_point": ch => ({innerHTML: `<a href='{{ network_links }}/{{ network }}tx/${ch.funding_txid}' target="_self">${ch.channel_point}</a>`}),
     "capacity": ch => ({innerHTML: ch.capacity.intcomma(), title: `Commit Fee: ${ch.commit_fee}`}),
     "local_balance": ch => ({innerHTML: ch.local_balance.intcomma()}),
     "remote_balance": ch => ({innerHTML: ch.remote_balance.intcomma()}),
@@ -588,13 +588,13 @@
 
   let {capacity, local_balance, remote_balance} = pending_open_template
   const pending_closed_template = Object.assign({}, {
-    "channel_id" : ch => ({innerHTML: `<a href="/channel?=${ch.chan_id}" target="_blank">${ch.short_chan_id}</a>`, title: ch.channel_point}),
-    "peer_alias" : ch => ({innerHTML: `<a href="{{ graph_links }}/{{ network }}node/${ch.remote_node_pub}" target="_blank">${ch.alias == '' ? ch.remote_node_pub.substr(0,12) : ch.alias }</a>`, title: ch.remote_node_pub})
+    "channel_id" : ch => ({innerHTML: `<a href="/channel?=${ch.chan_id}" target="_self">${ch.short_chan_id}</a>`, title: ch.channel_point}),
+    "peer_alias" : ch => ({innerHTML: `<a href="{{ graph_links }}/{{ network }}node/${ch.remote_node_pub}" target="_self">${ch.alias == '' ? ch.remote_node_pub.substr(0,12) : ch.alias }</a>`, title: ch.remote_node_pub})
   }, {capacity, local_balance, remote_balance },
   {
     "limbo_bal" : ch => ({innerHTML: ch.limbo_balance.intcomma() }),
     "local_commit" : ch => ({innerHTML: ch.local_commit_fee_sat.intcomma() }),
-    "closing_tx" : ch => ({innerHTML: `<a href='{{ network_links }}/{{ network }}tx/${ch.closing_txid}' target="_blank">${ch.closing_txid}</a>`}),
+    "closing_tx" : ch => ({innerHTML: `<a href='{{ network_links }}/{{ network }}tx/${ch.closing_txid}' target="_self">${ch.closing_txid}</a>`}),
   })
   const pending_fclosed_template = Object.assign({}, pending_closed_template)
   pending_fclosed_template["local_commit"] = ch => ({innerHTML: formatDate(ch.maturity_datetime), title: ch.blocks_til_maturity.intcomma()+' blocks ~'+adjustTZ(ch.maturity_datetime) })
@@ -787,7 +787,7 @@
   async function build_routed(forwards){
     let template = use(routed_template)
 
-    if(!addTitle('Routed', forwards, `Last <a href="/forwards" target="_blank">Payments Routed</a>`)) return
+    if(!addTitle('Routed', forwards, `Last <a href="/forwards" target="_self">Payments Routed</a>`)) return
     const table = byId('routed')
     table.innerHTML = null
     for(f of forwards.slice(0,20)){
@@ -818,7 +818,7 @@
     let remaining = 10-payments7d.length, template = use(payments_template), payments = payments7d
     if(remaining > 0) payments = [...payments, ...(await GET('payments', {data: {creation_date__lt: _7days_ago, status__lt:3, limit: remaining} })).results]
 
-    if(!addTitle('Payments', payments, `Last 10 <a href="/payments" target="_blank">Payments</a>`)) return
+    if(!addTitle('Payments', payments, `Last 10 <a href="/payments" target="_self">Payments</a>`)) return
     const table = byId('payments')
     table.innerHTML = null
     for(p of payments.slice(0,10)){
@@ -843,7 +843,7 @@
     }
   }
   function build_invoices(invoices){
-    if(!addTitle('Invoices', invoices, `Last 10 <a href="/invoices" target="_blank">Invoices</a>`)) return
+    if(!addTitle('Invoices', invoices, `Last 10 <a href="/invoices" target="_self">Invoices</a>`)) return
     const table = byId('invoices'), template = use(invoices_template)
     table.innerHTML = null
     for(inv of invoices) {
@@ -867,7 +867,7 @@
     }
   }
   function build_failedHTLC(fHTLCs){
-    if(!addTitle('failed_htlcs', fHTLCs, `Last <a href="/failed_htlcs" target="_blank">Failed HTLCs</a>`)) return
+    if(!addTitle('failed_htlcs', fHTLCs, `Last <a href="/failed_htlcs" target="_self">Failed HTLCs</a>`)) return
     const table = byId('failed_htlcs'), template = use(failedHTLCs_template)
     table.innerHTML = null
     for(htlc of fHTLCs){
@@ -918,7 +918,7 @@
 
     byId('public_channels_count').innerHTML = node_info.num_active_channels
     byId('total_channels').innerHTML = node_info.num_active_channels + node_info.num_inactive_channels
-    byId('peers').innerHTML = `<a href="/peers" target="_blank">Peers</a>: ${node_info.num_peers}`
+    byId('peers').innerHTML = `<a href="/peers" target="_self">Peers</a>: ${node_info.num_peers}`
     if(node_info.db_size > 0) byId('dbSize').innerHTML = `DB Size: ${node_info.db_size} GB`
 
     byId('total_balance').innerHTML = node_info.balance.total.intcomma()
